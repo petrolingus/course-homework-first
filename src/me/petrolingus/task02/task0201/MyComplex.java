@@ -42,11 +42,11 @@ public class MyComplex {
     }
 
     public boolean isReal() {
-        return Double.compare(im, 0) == 0;
+        return Double.compare(re, 0) == 0;
     }
 
     public boolean isImaginary() {
-        return Double.compare(re, 0) == 0;
+        return Double.compare(im, 0) == 0;
     }
 
     public boolean equals(double re, double im) {
@@ -72,7 +72,7 @@ public class MyComplex {
     }
 
     public MyComplex addNew(MyComplex right) {
-        return new MyComplex(re - right.getRe(),im - right.getIm());
+        return new MyComplex(re + right.getRe(),im + right.getIm());
     }
 
     public MyComplex subtract(MyComplex right) {
@@ -103,7 +103,6 @@ public class MyComplex {
     }
 
     public MyComplex conjugate() {
-        im = -im;
-        return this;
+        return new MyComplex(re, -im);
     }
 }
