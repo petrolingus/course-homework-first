@@ -39,6 +39,14 @@ public class Container {
         return b1 || b2;
     }
 
+    public boolean collidesHorizontal(Ball ball) {
+        return ball.getX() - ball.getRadius() < 0 || ball.getX() + ball.getRadius() > getWidth();
+    }
+
+    public boolean collidesVertical(Ball ball) {
+        return ball.getY() - ball.getRadius() < 0 || ball.getY() + ball.getRadius() > getHeight();
+    }
+
     @Override
     public String toString() {
         return "Container[" +
