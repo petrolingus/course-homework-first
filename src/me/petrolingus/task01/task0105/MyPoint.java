@@ -41,10 +41,7 @@ public class MyPoint {
 
     @Override
     public String toString() {
-        return "(" +
-                x +
-                ", " + y +
-                ')';
+        return "(" + x + ", " + y + ")";
     }
 
     public double distance(int x, int y) {
