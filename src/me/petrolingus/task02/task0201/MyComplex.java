@@ -6,6 +6,8 @@ public class MyComplex {
 
     private double im;
 
+    private static final double EPS = 1e-12;
+
     public MyComplex() {
         this(0, 0);
     }
@@ -42,19 +44,21 @@ public class MyComplex {
     }
 
     public boolean isReal() {
-        return Double.compare(re, 0) == 0;
+        return re < EPS;
     }
 
     public boolean isImaginary() {
-        return Double.compare(im, 0) == 0;
+        return im < EPS;
     }
 
     public boolean equals(double re, double im) {
-        return (Double.compare(this.re, re) == 0) && (Double.compare(this.im, im) == 0);
+        boolean b0 = this.re - re < EPS;
+        boolean b1 = this.im - im < EPS;
+        return b0 && b1;
     }
 
     public boolean equals(MyComplex another) {
-        return (Double.compare(another.re, re) != 0) && (Double.compare(another.im, im) == 0);
+        return equals(another.re, another.im);
     }
 
     public double magnitude() {
