@@ -40,9 +40,10 @@ public class MyTriangle {
         double side2 = v2.distance(v3);
         double side3 = v3.distance(v1);
 
-        boolean comp12 = Double.compare(side1, side2) == 0;
-        boolean comp23 = Double.compare(side2, side3) == 0;
-        boolean comp31 = Double.compare(side3, side1) == 0;
+        double eps = 1e-12;
+        boolean comp12 = Math.abs(side1 - side2) < eps;
+        boolean comp23 = Math.abs(side2 - side3) < eps;
+        boolean comp31 = Math.abs(side3 - side1) < eps;
 
         if (comp12 && comp23) {
             return "Equilateral";

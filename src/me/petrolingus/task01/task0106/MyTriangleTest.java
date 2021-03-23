@@ -1,28 +1,30 @@
 package me.petrolingus.task01.task0106;
 
-import me.petrolingus.task01.task0105.MyPoint;
-
 public class MyTriangleTest {
 
     public static void main(String[] args) {
 
-//        MyPoint[] points = {
-//                new MyPoint(0, 0),
-//                new MyPoint(0, 1),
-//                new MyPoint(1, 0),
-//        };
-//
-//        MyTriangle triangle = new MyTriangle(points[0], points[1], points[2]);
-//        System.out.println(triangle);
-//        System.out.println(triangle.getPerimeter());
-//        System.out.println(triangle.getType());
+        MyDoublePoint[] points = {
+                new MyDoublePoint(0, 0),
+                new MyDoublePoint(0, 1),
+                new MyDoublePoint(1, 0),
+        };
 
-        MyPoint point1 = new MyPoint(0, 0);
-        MyPoint point2 = new MyPoint(0, 0);
-        MyPoint point3 = new MyPoint(0, 0);
+        MyTriangle triangle = new MyTriangle(points[0], points[1], points[2]);
+        System.out.println(triangle);
+        System.out.println(triangle.getPerimeter());
+        System.out.println(triangle.getType() + "\n");
 
-        for (int i = 2; i < 10_000; i += 2) {
-            point2.setX(i);
-        }
+
+        MyDoublePoint[] points2 = new MyDoublePoint[3];
+        points2[0] = new MyDoublePoint(0, 0);
+        points2[1] = new MyDoublePoint(0.5, Math.sqrt(3) / 2.0);
+        points2[2] = new MyDoublePoint(1, 0);
+
+        MyTriangle triangle2 = new MyTriangle(points2[0], points2[1], points2[2]);
+        System.out.println(triangle2);
+        System.out.println(triangle2.getPerimeter());
+        System.out.println(triangle2.getType());
+
     }
 }
