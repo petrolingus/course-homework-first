@@ -23,8 +23,8 @@ public class MyPolynomial {
                 .map(i -> getDegree() - i)
                 .mapToObj(i ->
                         ((i == getDegree()) ? "" :
-                                ((coeffs[i] >= 0) ? "+" : "-")) + Math.abs(coeffs[i]) + "x^" + i)
-                .collect(Collectors.joining());
+                                ((coeffs[i] >= 0) ? "+ " : "- ")) + Math.abs(coeffs[i]) + "x^" + i)
+                .collect(Collectors.joining(" "));
     }
 
     public double evaluate(double x) {
